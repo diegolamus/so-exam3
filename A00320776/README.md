@@ -53,6 +53,12 @@ Como se observa en la imagen, entre los nodos del consul se encuentra un nodo ag
      
 **c.** Finalmente se hace una consulta al microservice_a, y la respuesta brinda toda la información del microsrvicio (ip, tags, puerto...).
      
+     
+**5.** Por último, se raliza la configuración del balanceador de carga. Para esto se instala la herramienta haproxy y luego se uno al servidor ya configurado. El balanceador se uno al servidor por medio del siguiente comando:
+
+    consul-template -consul-addr "192.168.104.30:8500" -template "/etc/consul-template/haproxy.tpl:/etc/haproxy/haproxy.cfg:systemctl restart haproxy"
+    
+De esta forma, cuando se 
 
 
 
