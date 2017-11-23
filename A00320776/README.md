@@ -58,7 +58,9 @@ Como se observa en la imagen, entre los nodos del consul se encuentra un nodo ag
 
     consul-template -consul-addr "192.168.104.30:8500" -template "/etc/consul-template/haproxy.tpl:/etc/haproxy/haproxy.cfg:systemctl restart haproxy"
     
-De esta forma, cuando se 
+    # La ip que se encuentra arriba es la IP del agent-server
+    
+De esta forma, cuando se realiza una consulta al balanceador el repartirá la carga entre los diferentes servicios que encuetre.
 
 
 
